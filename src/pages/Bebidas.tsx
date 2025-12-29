@@ -118,7 +118,7 @@ const Bebidas = () => {
               Contactanos por WhatsApp y te ayudamos a encontrar lo que necesitás
             </p>
             <a
-              href="https://wa.me/5493858123456?text=Hola%20El%20Rubio!%20Estoy%20buscando%20un%20producto%20específico"
+              href="https://wa.me/5492494661329?text=Hola%20El%20Rubio!%20Estoy%20buscando%20un%20producto%20específico"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -78,7 +78,7 @@ const Promos = () => {
                             Mirá nuestras bebidas individuales o escribinos.
                         </p>
                         <a
-                            href="https://wa.me/5493858123456?text=Hola%20El%20Rubio!%20Estoy%20buscando%20un%20combo%20específico"
+                            href="https://wa.me/5492494661329?text=Hola%20El%20Rubio!%20Estoy%20buscando%20un%20combo%20específico"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

@@ -78,12 +78,12 @@ const LocationSection = () => {
                     WhatsApp
                   </h3>
                   <a
-                    href="https://wa.me/5493858123456"
+                    href="https://wa.me/5492494661329"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-primary-dark font-semibold"
                   >
-                    +54 9 3858 123456
+                    +54 9 2494 66-1329
                   </a>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const LocationSection = () => {
               whileTap={{ scale: 0.98 }}
             >
               <a
-                href="https://wa.me/5493858123456?text=Hola%20El%20Rubio!%20Quiero%20hacer%20un%20pedido"
+                href="https://wa.me/5492494661329?text=Hola%20El%20Rubio!%20Quiero%20hacer%20un%20pedido"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block bg-primary text-white text-center px-8 py-4 rounded-2xl font-bold text-lg hover:bg-primary-dark transition-colors duration-300 shadow-lg hover:shadow-xl"

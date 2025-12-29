@@ -1,20 +1,17 @@
 import { motion } from 'framer-motion';
-import { FiPackage } from 'react-icons/fi';
+import { FiPackage, FiShoppingCart } from 'react-icons/fi';
 import { Product } from '../data/products';
+import { useCart } from '../context/CartContext';
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      `Hola El Rubio! Quiero pedir la ${product.name} que vi en la web.`
-    );
-    window.open(
-      `https://wa.me/5493858123456?text=${message}`,
-      '_blank'
-    );
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(product);
   };
 
   return (
@@ -63,13 +60,16 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <div className="text-2xl font-black text-primary">
             {product.price}
           </div>
+          
+          {/* Botón: Agregar al carrito */}
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            onClick={handleWhatsAppClick}
-            className="w-full bg-primary text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300 shadow-md hover:shadow-lg text-sm"
+            onClick={handleAddToCart}
+            className="w-full bg-primary text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-300 shadow-md hover:shadow-lg text-sm flex items-center justify-center gap-2"
           >
-            PEDIR AHORA
+            <FiShoppingCart size={18} />
+            AGREGAR AL CARRITO
           </motion.button>
         </div>
       </div>

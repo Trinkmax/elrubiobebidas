@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi';
+import { useCart } from '../context/CartContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { getTotalItems, openCart } = useCart();
+  const totalItems = getTotalItems();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +69,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -81,8 +84,31 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* Carrito Button Desktop */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={openCart}
+              className="relative p-2 text-gray-700 hover:text-primary transition-colors"
+            >
+              <FiShoppingCart size={24} />
+              <AnimatePresence>
+                {totalItems > 0 && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                    className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+                  >
+                    {totalItems}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+
             <a
-              href="https://wa.me/5493858123456?text=Hola%20El%20Rubio!%20Quiero%20hacer%20una%20consulta"
+              href="https://wa.me/5492494661329?text=Hola%20El%20Rubio!%20Quiero%20hacer%20una%20consulta"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition-colors duration-300"
@@ -91,13 +117,38 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-primary transition-colors"
-          >
-            {isMobileMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
-          </button>
+          {/* Mobile Right Icons */}
+          <div className="md:hidden flex items-center space-x-3">
+            {/* Carrito Button Mobile */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={openCart}
+              className="relative p-2 text-gray-700 hover:text-primary transition-colors"
+            >
+              <FiShoppingCart size={24} />
+              <AnimatePresence>
+                {totalItems > 0 && (
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    exit={{ scale: 0 }}
+                    className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+                  >
+                    {totalItems}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-700 hover:text-primary transition-colors"
+            >
+              {isMobileMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -127,7 +178,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="https://wa.me/5493858123456?text=Hola%20El%20Rubio!%20Quiero%20hacer%20una%20consulta"
+                href="https://wa.me/5492494661329?text=Hola%20El%20Rubio!%20Quiero%20hacer%20una%20consulta"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-primary-dark transition-colors duration-300 text-center"
