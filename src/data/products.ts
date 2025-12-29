@@ -1,0 +1,295 @@
+export interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  category: 'promo' | 'cerveza' | 'vino' | 'destilados';
+  featured?: boolean;
+  image?: string;
+}
+
+export const products: Product[] = [
+  // PROMOS (Restored)
+  {
+    id: 1,
+    name: "Promo Fernet Branca",
+    description: "Fernet Branca 750ml + Coca-Cola 2.25L",
+    price: "$8.500",
+    category: "promo",
+    featured: true,
+    image: "/images/products/promo_fernet_branca.png",
+  },
+  {
+    id: 2,
+    name: "Combo Smirnoff Energy",
+    description: "Vodka Smirnoff 750ml + 2 Speed 473ml",
+    price: "$7.200",
+    category: "promo",
+    featured: true,
+    image: "/images/products/combo_smirnoff_energy.png",
+  },
+  {
+    id: 3,
+    name: "Combo Skyy Económico",
+    description: "Vodka Skyy 750ml + Gaseosa Pomelo 2.25L",
+    price: "$6.800",
+    category: "promo",
+    featured: false,
+    image: "/images/products/combo_skyy_economico.png",
+  },
+  {
+    id: 4,
+    name: "Clásico Norteño",
+    description: "Vino Toro Caja 1L + Gaseosa Secco 2.25L",
+    price: "$3.500",
+    category: "promo",
+    featured: false,
+    image: "/images/products/clasico_norteno.png",
+  },
+  {
+    id: 5,
+    name: "Promo Balbo",
+    description: "Vino Balbo 1L + Gaseosa Pritty Limón 2.25L",
+    price: "$3.200",
+    category: "promo",
+    featured: false,
+    image: "/images/products/promo_balbo.png",
+  },
+  {
+    id: 6,
+    name: "Gin Tonic Brighton",
+    description: "Gin Brighton 750ml + Agua Tónica Schweppes 1.5L",
+    price: "$9.500",
+    category: "promo",
+    featured: true,
+    image: "/images/products/gin_tonic_brighton.png",
+  },
+  {
+    id: 7,
+    name: "Promo Gancia Sprite",
+    description: "Gancia 950ml + Sprite 2.25L",
+    price: "$5.900",
+    category: "promo",
+    featured: false,
+    image: "/images/products/promo_gancia_sprite.png",
+  },
+  {
+    id: 8,
+    name: "Campari Naranja",
+    description: "Campari 750ml + Naranja Crush 2.25L",
+    price: "$8.200",
+    category: "promo",
+    featured: false,
+    image: "/images/products/campari_naranja.png",
+  },
+  {
+    id: 9,
+    name: "Promo Whisky Criadores",
+    description: "Whisky Criadores 750ml + Coca-Cola 2.25L",
+    price: "$7.500",
+    category: "promo",
+    featured: false,
+    image: "/images/products/promo_whisky_criadores.png",
+  },
+  {
+    id: 110,
+    name: "Promo Ron Havana",
+    description: "Ron Havana Club 750ml + Coca-Cola 2.25L",
+    price: "$8.900",
+    category: "promo",
+    featured: false,
+    image: "/images/products/promo_ron_havana.png",
+  },
+  {
+    id: 111,
+    name: "Combo Absolut Citron",
+    description: "Vodka Absolut Citron 750ml + Sprite 2.25L",
+    price: "$11.500",
+    category: "promo",
+    featured: true,
+    image: "/images/products/combo_absolut_citron.png",
+  },
+  {
+    id: 112,
+    name: "Promo Cynar",
+    description: "Cynar 750ml + Gaseosa Pomelo 2.25L",
+    price: "$6.500",
+    category: "promo",
+    featured: false,
+    image: "/images/products/promo_cynar.png",
+  },
+  {
+    id: 113,
+    name: "Combo Old Smuggler",
+    description: "Whisky Old Smuggler 750ml + Coca-Cola 2.25L",
+    price: "$6.800",
+    category: "promo",
+    featured: false,
+    image: "/images/products/combo_old_smuggler.png",
+  },
+
+  // CERVEZAS
+  {
+    id: 10,
+    name: "Quilmes Clásica 473ml",
+    description: "Lata de cerveza rubia. Precio por unidad.",
+    price: "$900",
+    category: "cerveza",
+    featured: true,
+    image: "/images/products/quilmes_clasica_473.png",
+  },
+  {
+    id: 11,
+    name: "Brahma 473ml",
+    description: "Lata de cerveza suave y refrescante. Precio por unidad.",
+    price: "$850",
+    category: "cerveza",
+    featured: false,
+    image: "/images/products/brahma_473.png",
+  },
+  {
+    id: 12,
+    name: "Stella Artois 473ml",
+    description: "Lata de cerveza premium lager.",
+    price: "$1.200",
+    category: "cerveza",
+    featured: false,
+    image: "/images/products/stella_artois_473.png",
+  },
+  {
+    id: 13,
+    name: "Andes Origen Roja 473ml",
+    description: "Cerveza roja con notas de caramelo.",
+    price: "$1.100",
+    category: "cerveza",
+    featured: false,
+    image: "/images/products/andes_origen_roja_473.png",
+  },
+  {
+    id: 14,
+    name: "Corona 710ml",
+    description: "Cerveza mexicana, ideal para tomar con limón.",
+    price: "$2.500",
+    category: "cerveza",
+    featured: true,
+    image: "/images/products/corona_710.png",
+  },
+  {
+    id: 15,
+    name: "Heineken 473ml",
+    description: "Cerveza lager premium de calidad internacional.",
+    price: "$1.300",
+    category: "cerveza",
+    featured: false,
+    image: "/images/products/heineken_473.png",
+  },
+
+  // VINOS
+  {
+    id: 30,
+    name: "Dada 1 Malbec-Bonarda",
+    description: "Vino tinto joven y dulce, con notas de vainilla.",
+    price: "$3.200",
+    category: "vino",
+    featured: true,
+    image: "/images/products/dada_1.png",
+  },
+  {
+    id: 31,
+    name: "Cordero con Piel de Lobo",
+    description: "Malbec mendocino de gran cuerpo y estructura.",
+    price: "$4.500",
+    category: "vino",
+    featured: true,
+  },
+  {
+    id: 32,
+    name: "Nueve Ciento Malbec",
+    description: "Vino tinto equilibrado y frutal.",
+    price: "$2.800",
+    category: "vino",
+    featured: false,
+  },
+  {
+    id: 33,
+    name: "Cosecha Tardía Norton",
+    description: "Vino blanco dulce natural.",
+    price: "$3.000",
+    category: "vino",
+    featured: false,
+  },
+  {
+    id: 34,
+    name: "Alamos Malbec",
+    description: "Vino de Catena Zapata, intenso y complejo.",
+    price: "$5.200",
+    category: "vino",
+    featured: false,
+  },
+  {
+    id: 35,
+    name: "Estancia Mendoza Bivarietal",
+    description: "Merlot-Malbec, ideal para la mesa diaria.",
+    price: "$2.200",
+    category: "vino",
+    featured: false,
+  },
+
+  // DESTILADOS
+  {
+    id: 50,
+    name: "Fernet Branca 750ml",
+    description: "El clásico aperitivo argentino.",
+    price: "$7.500",
+    category: "destilados",
+    featured: true,
+  },
+  {
+    id: 51,
+    name: "Vodka Smirnoff 700ml",
+    description: "Vodka clásico para tus tragos.",
+    price: "$5.500",
+    category: "destilados",
+    featured: false,
+  },
+  {
+    id: 52,
+    name: "Campari 750ml",
+    description: "Aperitivo bitter rojo intenso.",
+    price: "$6.200",
+    category: "destilados",
+    featured: false,
+  },
+  {
+    id: 53,
+    name: "Gin Gordon's 700ml",
+    description: "Gin clásico estilo London Dry.",
+    price: "$7.800",
+    category: "destilados",
+    featured: false,
+  },
+  {
+    id: 54,
+    name: "Cynar 750ml",
+    description: "Aperitivo a base de alcaucil.",
+    price: "$4.900",
+    category: "destilados",
+    featured: false,
+  },
+  {
+    id: 55,
+    name: "Whisky Johnnie Walker Red",
+    description: "Whisky escocés blend etiqueta roja.",
+    price: "$18.500",
+    category: "destilados",
+    featured: true,
+  },
+];
+
+export const getFeaturedProducts = (): Product[] => {
+  return products.filter(product => product.featured);
+};
+
+export const getProductsByCategory = (category: Product['category']): Product[] => {
+  return products.filter(product => product.category === category);
+};
